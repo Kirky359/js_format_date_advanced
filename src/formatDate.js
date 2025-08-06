@@ -34,10 +34,9 @@ function formatDate(date, fromFormat, toFormat) {
         correctForm.push(fullYear);
       } else if (fromFormat[index] === 'YYYY' && toFormat.includes('YY')) {
         const year = Number(arrayOld[index]);
-        const fullYear =
-          Math.floor(year / 100) === 20 ? 2000 - year : 1900 - year;
+        const shortYear = String(year).slice(-2);
 
-        correctForm.push(Math.abs(fullYear));
+        correctForm.push(shortYear);
       } else {
         correctForm.push(arrayOld[index]);
       }
